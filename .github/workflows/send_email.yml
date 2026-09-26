@@ -24,7 +24,7 @@ jobs:
           from: ${{ secrets.MAIL_USERNAME }}
           
           # Указываем файлы через запятую:
-          attachments: p2.jpg, p1.png, photo.jpg
+          attachments: p2.png, p1.png, photo.jpg
           
           body: |
             Амина, асалямуалейкум! С днём рождения тебя! Тебе уже 10 лет, ничего себе, совсем взрослая стала!
