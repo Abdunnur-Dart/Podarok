@@ -7,6 +7,11 @@ jobs:
   send_email:
     runs-on: ubuntu-latest
     steps:
+      # Шаг 1: Скачиваем файлы из репозитория
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Шаг 2: Отправляем письмо с вложением
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -17,6 +22,8 @@ jobs:
           subject: С днём рождения, Амина! 🎉
           to: ${{ secrets.RECIPIENT_EMAIL }}
           from: ${{ secrets.MAIL_USERNAME }}
+          # Путь к вашей фотографии в репозитории:
+          attachments: photo.jpg
           body: |
             Амина, асалямуалейкум! С днём рождения тебя! Тебе уже 10 лет, ничего себе, совсем взрослая стала!
 
