@@ -1,0 +1,27 @@
+name: Send Birthday Email to Amina
+
+on:
+  workflow_dispatch: # Запуск только через API или вручную
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: С днём рождения, Амина! 🎉
+          to: ${{ secrets.RECIPIENT_EMAIL }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          body: |
+            Амина, привет! С днём рождения тебя! Тебе уже 10 лет, ничего себе, совсем взрослая стала!
+
+            Желаю тебе много-много радости, счастья и чтобы Всевышний всегда тебя берег, помогал во всём и даровал благословение (баракат) тебе и твоей семье. Пусть в школе всё даётся легко, оценки будут отличными, а настроение всегда крутым!
+
+            Оставайся всегда такой же доброй, умной и классной. Пусть все твои дуа обязательно сбываются, а каждый день будет наполнен интересными делами и весельем!
+
+            С праздником!
